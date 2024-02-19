@@ -10,8 +10,8 @@ X_test = readtable(['X_test.csv']);
 Y_test = readtable(['Y_test.csv']);
 X_train = readtable(['X_train.csv']);
 Y_train = readtable(['Y_train.csv']);
-X = readtable(["X.csv"])
-Y = readtable(["Y.csv"])
+X = readtable(["X.csv"]);
+Y = readtable(["Y.csv"]);
 
 %% Table to double
 X_test = table2array(X_test);
