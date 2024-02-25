@@ -47,7 +47,7 @@ trainFcn = 'traingd';  % Gradient Descent.
 % Create a Pattern Recognition Network
 hiddenLayerSize = 1;
 net = patternnet(hiddenLayerSize, trainFcn);
-net.layers{2}.transferFcn='logsig'
+% net.layers{2}.transferFcn='logsig'
 
 % Choose Input and Output Pre/Post-Processing Functions
 % For a list of all processing functions type: help nnprocess
