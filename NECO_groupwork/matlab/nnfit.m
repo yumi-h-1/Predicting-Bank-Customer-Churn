@@ -26,3 +26,9 @@ y_test = table2array(y_test);
 
 %% Build a model
 Mdl = fitcnet(X_train,y_train)
+
+%%
+testAccuracy = 1 - loss(Mdl,X_test,y_test,"LossFun","classiferror")
+
+%%
+confusionchart(y_test,predict(Mdl,X_test))

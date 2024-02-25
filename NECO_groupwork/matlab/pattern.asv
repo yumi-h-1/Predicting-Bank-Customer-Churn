@@ -17,12 +17,12 @@ X_test = readtable(['X_test.csv']);
 y_test = readtable(['y_test.csv']);
 
 %% Table to double
-X_train = table2array(X_train);
-y_train = table2array(y_train);
-X_val = table2array(X_val);
-y_val = table2array(y_val);
-X_test = table2array(X_test);
-y_test = table2array(y_test);
+%X_train = table2array(X_train);
+%y_train = table2array(y_train);
+%X_val = table2array(X_val);
+%y_val = table2array(y_val);
+%X_test = table2array(X_test);
+%y_test = table2array(y_test);
 
 %% NN Pattern Recognition
 % Solve a Pattern Recognition Problem with a Neural Network
@@ -34,8 +34,8 @@ y_test = table2array(y_test);
 %   X_train - input data.
 %   y_train - target data.
 
-x = X_train';
-t = y_train';
+x = X_train;
+t = y_train;
 
 % Choose a Training Function
 % For a list of all training functions type: help nntrain
@@ -46,9 +46,23 @@ trainFcn = 'traingd';  % Gradient Descent.
 
 % Create a Pattern Recognition Network
 hiddenLayerSize = 1;
-net = patternnet(hiddenLayerSize, trainFcn);
-% net.layers{2}.transferFcn='logsig'
 
+% Use cross-entropy for the performance function
+performFcn = 'crossentropy';
+
+
+net = patternnet(hiddenLayerSize, trainFcn, performFcn);
+% net.layers{2}.transferFcn='logsig'
+%%
+view(net)
+%%
+net = train(net,x,t);
+
+%%
+y = net(x);
+
+
+%%
 % Choose Input and Output Pre/Post-Processing Functions
 % For a list of all processing functions type: help nnprocess
 % net.input.processFcns = {'removeconstantrows','mapminmax'};
