@@ -1,0 +1,9 @@
+Supanut Sookkho : <evaluation_score>
+Yumi Heo : <evaluation_score> 
+
+where evaluation_score in {1,2,3,4} 
+means: 
+1 = didn’t contribute 
+2 = contributed somewhat 
+3 = contributed
+4 = outstanding contribution 
