@@ -1,16 +1,22 @@
+%% Training MLP Model %%
+%%%%%%%%%%%%%%%%%%%%%%%%
+%% clear command, workspace, and figures
+clc;
+clear;
+close all;
+
 %% Import data from the CSV file
-X_train = readmatrix('X_train_ndarray.csv')
-X_test = readmatrix('X_test_ndarray.csv')
-X_vali = readmatrix('X_vali_ndarray.csv')
-y_train = readmatrix('y_train_ndarray.csv')
-y_test = readmatrix('y_test_ndarray.csv')
-y_vali = readmatrix('y_vali_ndarray.csv')
+X_train = readmatrix('X_train_ndarray.csv');
+X_test = readmatrix('X_test_ndarray.csv');
+X_vali = readmatrix('X_vali_ndarray.csv');
+y_train = readmatrix('y_train_ndarray.csv');
+y_test = readmatrix('y_test_ndarray.csv');
+y_vali = readmatrix('y_vali_ndarray.csv');
 
 %% Data preparation
-% Because we already did data preprocessing in Python and stored all 6 datasets in a CSV file. 
-% For a fair comparison, we will use the same preprocessed dataset in MATLAB to make sure we will train, validate, and test with the same observed data.
+% For a fair comparison, we take the same training, validation, and test set made from Python and input them in Matlab.
 
-% Transpose the matrices and assign them back to the same variable
+% Transpose the matrices and assign them back to the same variable.
 X_train = X_train';
 X_test = X_test';
 X_vali = X_vali';
@@ -18,6 +24,7 @@ y_train = y_train';
 y_test = y_test';
 y_vali = y_vali';
 
+% For reproducibility
 rng(123)
 
 %% Set the Hyperparameter for the model
