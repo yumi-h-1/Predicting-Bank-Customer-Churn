@@ -1,0 +1,10 @@
+혹시 모델 파일을 따로 저장해야 하느냐 테스트를 위해?
+
+sgd와 adam 차이 구분
+
+왜 validation이 train loss 보다 커브가 낮게 잡히지?
+(이유는 여러가지: https://pyimagesearch.com/2019/10/14/why-is-my-validation-loss-lower-than-my-training-loss/)
+
+어느 지점에서 epoch를 멈춰야 할까?
+
+왜 SVM training 속도가 엄청 걸려?

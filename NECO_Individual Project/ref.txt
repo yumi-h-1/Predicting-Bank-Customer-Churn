@@ -1,0 +1,12 @@
+https://dcai.csail.mit.edu/2024/data-centric-model-centric/
+
+
+https://towardsdatascience.com/epoch-vs-iterations-vs-batch-size-4dfb9c7ce9c9
+
+https://github.com/christianversloot/machine-learning-articles/blob/main/how-to-use-k-fold-cross-validation-with-pytorch.md
+
+https://debuggercafe.com/hyperparameter-search-with-pytorch-and-skorch/
+
+https://machinelearningmastery.com/how-to-grid-search-hyperparameters-for-pytorch-models/
+
+https://pyimagesearch.com/2019/10/14/why-is-my-validation-loss-lower-than-my-training-loss/
