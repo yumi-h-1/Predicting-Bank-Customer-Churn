@@ -1,0 +1,2 @@
+cuda 쓰려면 tensorflow gpu keras 사용해야함 이건 가능한가?
+cpu로 돌리니 너무 시간 걸려
