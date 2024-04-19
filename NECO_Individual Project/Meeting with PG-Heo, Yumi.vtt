@@ -1,0 +1,266 @@
+WEBVTT
+
+fb19416d-f613-4df2-bfbe-bc5e26d7c354/42-0
+00:00:03.097 --> 00:00:07.842
+<v PG-Heo, Yumi>Hello this is the video for the
+coursework of neural computing.</v>
+
+fb19416d-f613-4df2-bfbe-bc5e26d7c354/42-1
+00:00:07.842 --> 00:00:12.736
+<v PG-Heo, Yumi>This is my paper and it is about
+comparing multilayer perceptrons</v>
+
+fb19416d-f613-4df2-bfbe-bc5e26d7c354/42-2
+00:00:12.736 --> 00:00:16.963
+<v PG-Heo, Yumi>and support vector machines
+using the data set regarding</v>
+
+fb19416d-f613-4df2-bfbe-bc5e26d7c354/42-3
+00:00:16.963 --> 00:00:18.817
+<v PG-Heo, Yumi>customer churn in a bank.</v>
+
+fb19416d-f613-4df2-bfbe-bc5e26d7c354/45-0
+00:00:20.477 --> 00:00:21.157
+<v PG-Heo, Yumi>Let's run the.</v>
+
+fb19416d-f613-4df2-bfbe-bc5e26d7c354/55-0
+00:00:22.937 --> 00:00:27.013
+<v PG-Heo, Yumi>Test code first because it took
+a bit of time to plot some</v>
+
+fb19416d-f613-4df2-bfbe-bc5e26d7c354/55-1
+00:00:27.013 --> 00:00:27.497
+<v PG-Heo, Yumi>curves.</v>
+
+fb19416d-f613-4df2-bfbe-bc5e26d7c354/65-0
+00:00:48.977 --> 00:00:51.897
+<v PG-Heo, Yumi>So this is the file for model
+training and also.</v>
+
+fb19416d-f613-4df2-bfbe-bc5e26d7c354/122-0
+00:00:53.177 --> 00:00:57.276
+<v PG-Heo, Yumi>Including initial data analysis.
+So at first initial analysis of</v>
+
+fb19416d-f613-4df2-bfbe-bc5e26d7c354/122-1
+00:00:57.276 --> 00:01:00.998
+<v PG-Heo, Yumi>the data set was conducted and
+then the baseline of with a</v>
+
+fb19416d-f613-4df2-bfbe-bc5e26d7c354/122-2
+00:01:00.998 --> 00:01:04.530
+<v PG-Heo, Yumi>single hidden layer was
+established and hyperpar tuning</v>
+
+fb19416d-f613-4df2-bfbe-bc5e26d7c354/122-3
+00:01:04.530 --> 00:01:08.440
+<v PG-Heo, Yumi>was conducted through research.
+And then your search and also</v>
+
+fb19416d-f613-4df2-bfbe-bc5e26d7c354/122-4
+00:01:08.440 --> 00:01:12.161
+<v PG-Heo, Yumi>baseline of MLP model with two
+hidden layers was built and</v>
+
+fb19416d-f613-4df2-bfbe-bc5e26d7c354/122-5
+00:01:12.161 --> 00:01:14.937
+<v PG-Heo, Yumi>hyperparameter tuning was done
+to identify.</v>
+
+fb19416d-f613-4df2-bfbe-bc5e26d7c354/134-0
+00:01:16.497 --> 00:01:20.361
+<v PG-Heo, Yumi>The model with the highest test
+accuracy and to select for the</v>
+
+fb19416d-f613-4df2-bfbe-bc5e26d7c354/134-1
+00:01:20.361 --> 00:01:21.097
+<v PG-Heo, Yumi>final model.</v>
+
+fb19416d-f613-4df2-bfbe-bc5e26d7c354/163-0
+00:01:21.927 --> 00:01:26.578
+<v PG-Heo, Yumi>Similarly, the baseline of SVM
+model was built. Hyperparameter</v>
+
+fb19416d-f613-4df2-bfbe-bc5e26d7c354/163-1
+00:01:26.578 --> 00:01:30.934
+<v PG-Heo, Yumi>tuning was done through grid
+search and manual search, and</v>
+
+fb19416d-f613-4df2-bfbe-bc5e26d7c354/163-2
+00:01:30.934 --> 00:01:35.364
+<v PG-Heo, Yumi>the model with the highest
+accuracy was selected as a final</v>
+
+fb19416d-f613-4df2-bfbe-bc5e26d7c354/163-3
+00:01:35.364 --> 00:01:35.807
+<v PG-Heo, Yumi>model.</v>
+
+fb19416d-f613-4df2-bfbe-bc5e26d7c354/196-0
+00:01:37.087 --> 00:01:42.071
+<v PG-Heo, Yumi>In this process, SVM required a
+lot of time for training and</v>
+
+fb19416d-f613-4df2-bfbe-bc5e26d7c354/196-1
+00:01:42.071 --> 00:01:46.974
+<v PG-Heo, Yumi>grid search, so the different
+type of research was applied.</v>
+
+fb19416d-f613-4df2-bfbe-bc5e26d7c354/196-2
+00:01:46.974 --> 00:01:52.367
+<v PG-Heo, Yumi>Here it is called a halving grid
+search provided by scikit learn.</v>
+
+fb19416d-f613-4df2-bfbe-bc5e26d7c354/198-0
+00:01:53.477 --> 00:01:54.477
+<v PG-Heo, Yumi>Another.</v>
+
+fb19416d-f613-4df2-bfbe-bc5e26d7c354/248-0
+00:01:55.757 --> 00:02:00.407
+<v PG-Heo, Yumi>SVM baseline model using the
+linear SVC code for large data</v>
+
+fb19416d-f613-4df2-bfbe-bc5e26d7c354/248-1
+00:02:00.407 --> 00:02:05.135
+<v PG-Heo, Yumi>set was built and compared with
+the model using SVC code. In</v>
+
+fb19416d-f613-4df2-bfbe-bc5e26d7c354/248-2
+00:02:05.135 --> 00:02:09.708
+<v PG-Heo, Yumi>conclusion, the model using SVC
+code with RBF kernel after</v>
+
+fb19416d-f613-4df2-bfbe-bc5e26d7c354/248-3
+00:02:09.708 --> 00:02:14.591
+<v PG-Heo, Yumi>hyperparameter tuning showed a
+highest accuracy and that model</v>
+
+fb19416d-f613-4df2-bfbe-bc5e26d7c354/248-4
+00:02:14.591 --> 00:02:16.917
+<v PG-Heo, Yumi>was selected as a final model.</v>
+
+fb19416d-f613-4df2-bfbe-bc5e26d7c354/268-0
+00:02:18.557 --> 00:02:21.376
+<v PG-Heo, Yumi>Despite numerous
+hyperparametining and changes of</v>
+
+fb19416d-f613-4df2-bfbe-bc5e26d7c354/268-1
+00:02:21.376 --> 00:02:24.534
+<v PG-Heo, Yumi>the number of iterations and
+epochs, if you look at the</v>
+
+fb19416d-f613-4df2-bfbe-bc5e26d7c354/268-2
+00:02:24.534 --> 00:02:26.677
+<v PG-Heo, Yumi>training process of each final
+model.</v>
+
+fb19416d-f613-4df2-bfbe-bc5e26d7c354/297-0
+00:02:27.157 --> 00:02:32.301
+<v PG-Heo, Yumi>You can see a slight a small
+spike during validation in the</v>
+
+fb19416d-f613-4df2-bfbe-bc5e26d7c354/297-1
+00:02:32.301 --> 00:02:37.446
+<v PG-Heo, Yumi>MLP's loss plot and also SVM's
+learning curve here is there</v>
+
+fb19416d-f613-4df2-bfbe-bc5e26d7c354/297-2
+00:02:37.446 --> 00:02:42.419
+<v PG-Heo, Yumi>there is a small spike in
+learning curve of the final SVM</v>
+
+fb19416d-f613-4df2-bfbe-bc5e26d7c354/297-3
+00:02:42.419 --> 00:02:43.277
+<v PG-Heo, Yumi>model and.</v>
+
+fb19416d-f613-4df2-bfbe-bc5e26d7c354/305-0
+00:02:45.787 --> 00:02:52.387
+<v PG-Heo, Yumi>Here, here is there is a spike
+as well for the final MLP model.</v>
+
+fb19416d-f613-4df2-bfbe-bc5e26d7c354/344-0
+00:02:53.887 --> 00:02:57.607
+<v PG-Heo, Yumi>Through this, a more detailed
+adjustment of the number epochs</v>
+
+fb19416d-f613-4df2-bfbe-bc5e26d7c354/344-1
+00:02:57.607 --> 00:03:00.667
+<v PG-Heo, Yumi>is necessary in the final MLP
+model and additional</v>
+
+fb19416d-f613-4df2-bfbe-bc5e26d7c354/344-2
+00:03:00.667 --> 00:03:04.447
+<v PG-Heo, Yumi>hyperparameter tuning such as
+regularisation C is necessary in</v>
+
+fb19416d-f613-4df2-bfbe-bc5e26d7c354/344-3
+00:03:04.447 --> 00:03:06.727
+<v PG-Heo, Yumi>the SVM model to prevent
+overfitting.</v>
+
+fb19416d-f613-4df2-bfbe-bc5e26d7c354/367-0
+00:03:08.667 --> 00:03:13.106
+<v PG-Heo, Yumi>OK, so let's check the test run
+with reproducibility has been</v>
+
+fb19416d-f613-4df2-bfbe-bc5e26d7c354/367-1
+00:03:13.106 --> 00:03:17.187
+<v PG-Heo, Yumi>confirmed by loading each final
+model and each test set.</v>
+
+fb19416d-f613-4df2-bfbe-bc5e26d7c354/395-0
+00:03:18.627 --> 00:03:23.594
+<v PG-Heo, Yumi>Modified for each model, not
+only the test accuracy but also</v>
+
+fb19416d-f613-4df2-bfbe-bc5e26d7c354/395-1
+00:03:23.594 --> 00:03:28.480
+<v PG-Heo, Yumi>ROC curve and calculation of AUC
+precision recall curve and</v>
+
+fb19416d-f613-4df2-bfbe-bc5e26d7c354/395-2
+00:03:28.480 --> 00:03:32.227
+<v PG-Heo, Yumi>average precision score were
+used to compare.</v>
+
+fb19416d-f613-4df2-bfbe-bc5e26d7c354/397-0
+00:03:33.627 --> 00:03:34.067
+<v PG-Heo, Yumi>Two models.</v>
+
+fb19416d-f613-4df2-bfbe-bc5e26d7c354/469-0
+00:03:35.517 --> 00:03:39.393
+<v PG-Heo, Yumi>The MLP model confirmed that it
+had a better performance than</v>
+
+fb19416d-f613-4df2-bfbe-bc5e26d7c354/469-1
+00:03:39.393 --> 00:03:42.957
+<v PG-Heo, Yumi>the SVM model for this bank
+churn data set. Although SVM</v>
+
+fb19416d-f613-4df2-bfbe-bc5e26d7c354/469-2
+00:03:42.957 --> 00:03:46.646
+<v PG-Heo, Yumi>took a lot of time and memory
+while training, and MLP also</v>
+
+fb19416d-f613-4df2-bfbe-bc5e26d7c354/469-3
+00:03:46.646 --> 00:03:50.084
+<v PG-Heo, Yumi>took a considerable amount of
+time due to K fold cross</v>
+
+fb19416d-f613-4df2-bfbe-bc5e26d7c354/469-4
+00:03:50.084 --> 00:03:53.961
+<v PG-Heo, Yumi>validation and epochs. If more
+detailed hyperparameter tuning</v>
+
+fb19416d-f613-4df2-bfbe-bc5e26d7c354/469-5
+00:03:53.961 --> 00:03:57.525
+<v PG-Heo, Yumi>in regularisation and early
+stopping were implemented in</v>
+
+fb19416d-f613-4df2-bfbe-bc5e26d7c354/469-6
+00:03:57.525 --> 00:04:01.026
+<v PG-Heo, Yumi>code, a more stable model with
+better accuracy might be</v>
+
+fb19416d-f613-4df2-bfbe-bc5e26d7c354/469-7
+00:04:01.026 --> 00:04:02.277
+<v PG-Heo, Yumi>achieved. Thank you.</v>
