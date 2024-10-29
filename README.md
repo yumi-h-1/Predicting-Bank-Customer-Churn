@@ -4,59 +4,51 @@ Customer churn analysis is crucial for banks aiming to maintain profitability, e
 
 
 ## Project Files
-- **Data**: Test sets are stored in the `data`. The raw data is derived from Hugging Face.
+- **Data**: Test sets are stored in the `data`. The raw data is in the `data/raw`.
 - **Notebooks**: The notebook for training and testing is located in the `notebooks/` folder.
 - **Models**: The created models are located in the `models/` folder.
-- **Results**: Visualisations, such as training accuracy or loss of the model, can be found in the `results/figures` folder.
+- **Results**: Visualisations, such as training loss or ROC curve of the models, can be found in the `results/figures` folder.
 
 ## Methodology 
-- **Data Preprocessing**:
-  - For ***LSTM models***: Applied preprocessing steps including lowercasing, removing numbers, punctuation, double whitespaces, and stopwords using Python packages (`re`, `string`, and `nltk`). Converted text to lowercase and removed special characters.
-  - For ***DistilBERT***: Used basic preprocessing in one model to compare its impact, while another DistilBERT model retained the original text.
-  - Split the dataset into training, validation, and test sets, with 20% of the training set used for validation.
+- **Data Preprocessing**: Class imbalance is handled using repeated stratified K-fold cross-validation. Consider oversampling/undersampling. Apply data scaling and normalisation. Analyse the correlation between all features and the target.
 
-- **Tokenisation and Padding**:
-  - ***LSTM***: Used TensorFlow’s `Tokenizer` for tokenisation and set padding to 29 tokens (based on median text length).
-  - ***DistilBERT***: Used Hugging Face’s `DistilBertTokenizer` for tokenisation and applied the same padding length of 29.
-
+  ***Correlation between all features and the target***
+    
+  ![correlation-features-target](results/figures/correlation-features-target.jpg)
+  
 - **Modeling**:
-  - ***LSTM Models***: Developed three LSTM baselines with different word embeddings: Keras embedding layer (trained from scratch), pre-trained Word2Vec, and pre-trained GloVe embeddings. Each model has:
-    - Three layers: embedding, LSTM (30 hidden units), and a dense layer with softmax for 77-class classification.
-    - Adam optimizer (learning rate 0.001) and sparse categorical cross-entropy as the loss function.
-    - Dropout regularisation (0.2) to prevent overfitting and early stopping set to 100 epochs with 20 patience.
-
-    ***The best LSTM training loss***
+    - For ***Multilayer Perceptron (MLP)***: Data converted to PyTorch tensors. Two hidden layers optimized via grid search on hyperparameters (learning rate, hidden units, weight decay, epochs).
+  
+      ***Loss plots of the MLP model***
     
-    ![lstm-best-model-training-loss](results/figures/lstm-best-model-training-loss.png)
+      ![mlp-loss-plot](results/figures/mlp-loss-plot.jpg)
 
-    ***The best LSTM training accuracy***
+    - For ***Support Vector Machine (SVM)***: RBF kernel applied. Grid search on regularization parameter C and gamma, optimized with halving grid search.
+
+      ***Learning curves of the SVM model***
     
-    ![lstm-best-model-training-accuracy](results/figures/lstm-best-model-training-accuracy.png)
-
-  - ***DistilBERT Model***: Used Hugging Face’s pre-trained DistilBERT with a linear layer adjusted for 77-class output. Training was limited to 5 epochs, with no additional hyperparameter tuning or layer adjustments.
-
-    ***The best DistilBERT training accuracy***
-    
-    ![distilbert-training-plot](results/figures/distilbert-training-plot.png)
-
-- **Evaluation**: Assessed model performance using test accuracy, precision, recall, and F1 score, alongside training time and memory usage. The best-performing LSTM and DistilBERT models were compared on these metrics to determine efficiency and practical feasibility in chatbot applications.
+      ![svm-learning-curves](results/figures/svm-learning-curves.jpg)
+      
+- **Evaluation**: Best configurations evaluated based on accuracy, ROC, and Precision-Recall curves.
 
 ## Key Findings
-- **Model Performance**: The DistilBERT model significantly outperformed LSTM in accuracy, precision, recall, and F1-score by approximately 10 percentage points. DistilBERT achieved nearly 90% in both accuracy and F1-score, while the best LSTM model (using Word2Vec embeddings) reached 79.8%.
-- **Training Time and Resource Constraints**: DistilBERT trained far more quickly on a T4 GPU, taking only 24 seconds, compared to LSTM’s 210.85 seconds on a CPU. However, DistilBERT’s large file size (506.8 MB) makes it 169 times larger than the LSTM model, implying higher storage and operational costs.
+- **Model Performance**:
+  - ***Multilayer Perceptron (MLP)***: Faster training time and higher accuracy than SVM.
+  - ***Support Vector Machine (SVM)***: Slower training due to larger dataset size. Performance impacted by data imbalance despite cross-validation.
 
   ***Model comparison using the test set***
   
-  | Model Name | Accuracy | Precision | Recall | F1-score | Training time (sec) | File size (MB) |
-  | --- | --- | --- | --- | --- | --- | --- |
-  | LSTM model | 79.84 | 81.46 | 79.84 | 79.54 | 210.85 (with CPU) | 3.3 |
-  | DistilBERT model | 89.55 | 90.08 | 89.55 | 89.56 | 24.42 (with T4 GPU)	| 506.8 |
+  | Model Name | Accuracy | AUC | Average Precision score | Training & Validation Time (sec) using CPU |
+  | --- | --- | --- | --- | --- |
+  | MLP Model | 86.32 | 0.89 | 0.72 | 263.23 |
+  | SVM Model | 85.73 | 0.84 | 0.68 | 1352.12 |
+
+- **Interpretability**: SVM provides more interpretable decision boundaries, useful for business contexts. MLP outperforms in speed and accuracy but is harder to interpret.
 
 ## Future Work
-- **Model Enhancement**: Apply **data augmentation** and **cross-validation** to mitigate training set imbalances, potentially boosting performance for both models. Explore advanced LSTM architectures (e.g., bidirectional LSTMs) and DistilBERT fine-tuning, including layer adjustments and varied learning rates.
-- **Model Compression**: Research lightweight model alternatives and explore knowledge distillation to transfer learned information from DistilBERT to a smaller model, improving storage and computational efficiency without major performance trade-offs.
-- **Inference Testing**: Future work should validate model inference capabilities through real-time user interaction via API integration, such as those provided by Hugging Face, to assess practical deployment viability.
-
+- **Overfitting Prevention**: Use EarlyStopping for MLP to automatically limit epochs.
+- **SVM Improvements**: Further investigate iteration impact on accuracy. Experiment with additional class weights to address imbalance.
+- **Ensemble Approach**: Combine MLP’s feature extraction with SVM’s classification in ensemble models for similar classification tasks.
 
 ## Used Datasets
-- [**Banking77**](https://huggingface.co/datasets/PolyAI/banking77)
+- [**Binary Classification with a Bank Churn Dataset**](https://www.kaggle.com/competitions/playground-series-s4e1)
